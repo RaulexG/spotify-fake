@@ -1,0 +1,139 @@
+$Poppis: "Poppins", Arial, Helvetica, sans-serif;
+$montserrat: "Montserrat", Arial, Helvetica, sans-serif;
+$white: #ffffff;
+$gray3: #242424aa;
+$gray2: #242424;
+$gray: #493d3d28;
+$green: #2B8E1A;
+$black: rgb(5, 5, 5);
+$grayLight: #4b4b4b; 
+$hoverColor: rgba(255, 255, 255, 0.1); 
+
+$clamptitle: clamp(20px, 4vw, 60px);
+$clamp: clamp(10px, 1.1vw, 14px);
+$btn: clamp(9px, 0.8vw, 10px);
+$clampbtn: clamp(5px, 0.8vw, 10px);
+$clampImg : clamp(16px, 1.7vw, 20px);
+$icon: clamp(20px, 2.5vw, 26px);
+$BigImg : clamp(90px, 16vw, 250px);
+
+$clamptext: clamp(14px, 1.6vw, 16px); 
+$clamptextSmall: clamp(10px, 1vw, 12px); 
+
+$bg: clamp(5vw, 20vh, 22vw);
+
+
+
+@mixin flex{
+    display: flex;       
+    box-sizing: border-box;
+}
+
+@mixin felxColum{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+@mixin iconHover{
+    &:hover{
+        transform: scale(1.01);
+        transition: 0.2s;
+        opacity: 100%;
+    }
+}
+
+@mixin txtHover{
+    &:hover{
+        text-decoration-line: underline;
+    }
+    
+}
+
+@mixin border{
+    padding: 10px;
+    margin: 6px;
+    border-radius: 0.7rem;
+
+}
+
+@mixin itemCenter{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@mixin container{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+@mixin container93{
+    max-width: 93%;
+    margin: 0 auto;
+}
+
+@mixin container97{
+    max-width: 97%;
+    margin: 0 auto;
+}
+
+@mixin bg-img{
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 40vh;
+    display: Flex;
+    align-items: center; 
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+@mixin bg-imgchi{
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: $bg;    
+    display: Flex;
+    align-items: center; 
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+@mixin laptops{
+    @media screen and (max-width: 70rem) { @content  };
+}
+
+@mixin tablets{
+    @media screen and (max-width: 60rem) { @content };
+}
+
+@mixin phones{
+    @media screen and (max-width: 48rem) { @content };
+}
+
+
+@mixin scrollbar-estilo($width, $bg-color, $thumb-color, $thumb-hover-color) {
+    
+    &::-webkit-scrollbar {
+      width: $width; /* Ancho de la barra de scroll */
+    }
+  
+    /* Estilo del thumb (la parte que se mueve) */
+    &::-webkit-scrollbar-thumb {
+      background-color: $thumb-color; /* Color del thumb */     
+    }
+  
+    /* Estilo del thumb cuando se pasa el mouse sobre él */
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: $thumb-hover-color; /* Color del thumb al hacer hover */
+    }
+  
+    /* Estilo del track (la parte de fondo de la barra de scroll) */
+    &::-webkit-scrollbar-track {
+      background-color: $bg-color; /* Color del fondo */
+    }
+  }
+  

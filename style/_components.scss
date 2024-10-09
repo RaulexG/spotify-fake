@@ -1,0 +1,32 @@
+
+.btn{
+    cursor: pointer;
+    display: block;
+    border: none;
+    background-color: $white;
+    color: $black;
+    border-radius: 20px;
+    width: 40%;
+    padding: 2px 0;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Montserrat" , Arial, Helvetica, sans-serif;
+    font-size: $btn;
+}
+
+.btn2{
+    cursor: pointer;
+    display: block;
+    border: solid 1px $white;
+    background: none;
+    color: $white;
+    border-radius: 20px;
+    padding: 0.4rem;     
+    text-align: center;
+    font-weight: 600;
+    font-family: "Montserrat" , Arial, Helvetica, sans-serif;
+    font-size: $clampbtn;
+}
+
+
+

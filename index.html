@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>spotify-fake</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="icon" type="image/svg" href="img/Logo.svg">
+</head>
+<body>
+
+   
+    <nav>
+        <div class="nav__icons">
+            <i class="nav__icons-icon"><img src="img/home.svg" alt="Home">Inicio</i>
+            <i class="nav__icons-icon"><img src="img/search.svg" alt="Buscador">Buscar</i>
+        </div>        
+    </nav>
+
+    <section>
+        <article class="library">
+            <div class="library__header">
+                <div class="library__header-left">
+                    <i class="library__header-icon1"><img src="/img/library.svg" alt="">Tu biblioteca</i>
+                </div>
+
+                <div class="library__header-rigth">
+                    <i class="library__header-icon2"><img src="/img/plus.svg" alt=""></i>
+                    <i class="library__header-icon2"><img src="/img/arrow-right.svg" alt=""></i>
+                </div>
+            </div>
+            <div class="library__menu">
+                <i class="library__menu-icon"><img src="img/x.svg" alt=""></i>
+                <button class="library__menu-btn btn">Artista</button>
+            </div>
+            <div class="library__search">
+                <i class="library__search-icon1"><img src="img/search.svg" alt=""></i>
+                <i class="library__search-icon2">Recientes <img src="img/list.svg" alt=""></i>
+            </div>
+        </article>
+
+        <article class="singers">
+            <div class="singers__singer">
+                <img class="singers__singer-img" src="img/coldplay.jpeg" alt="">
+                <span class="singers__singer-span">Coldplay</span>
+                <i class="singers__singer-icon"><img src="img/volumen1.svg" alt=""></i>
+                <div class="play-icon">
+                    <img src="/img/play.svg" alt="">
+                </div>
+            </div>
+
+            <div class="singers__singer">
+                <img class="singers__singer-img" src="img/BadBunny.jpeg" alt="">
+                <span class="singers__singer-span">Bad Bunny</span>  
+                <div class="play-icon">
+                    <img src="/img/play.svg" alt="">
+                </div>              
+            </div>
+            <div class="singers__singer">
+                <img class="singers__singer-img" src="img/Dani.jpeg" alt="">
+                <span class="singers__singer-span">Dani Flow</span>   
+                <div class="play-icon">
+                    <img src="/img/play.svg" alt="">
+                </div>             
+            </div>
+            <div class="singers__singer">
+                <img class="singers__singer-img" src="img/jose.jpeg" alt="">
+                <span class="singers__singer-span">Jose Jose</span> 
+                <div class="play-icon">
+                    <img src="/img/play.svg" alt="">
+                </div>               
+            </div>
+            <div class="singers__singer">
+                <img class="singers__singer-img" src="img/nata.jpeg" alt="">
+                <span class="singers__singer-span">natanael Cano</span> 
+                <div class="play-icon">
+                    <img src="/img/play.svg" alt="">
+                </div>               
+            </div>
+            <div class="singers__singer">
+                <img class="singers__singer-img" src="img/paulo.jpeg" alt="">
+                <span class="singers__singer-span">Paulo londra</span>  
+                <div class="play-icon">
+                    <img src="/img/play.svg" alt="">
+                </div>              
+            </div>
+        </article>
+    </section>
+
+    <main>
+        <article class="main__header">
+
+            <div class="main__header-icons">
+                <div class="main__header-icons-left">
+                    <i class="main__iconChevron"><img src="/img/chevron-left.svg" alt=""></i>
+                    <i class="main__iconChevron"><img src="/img/chevron-right.svg" alt=""></i>
+                </div>
+    
+                <div class="main__header-icon-right">
+                    <i class="main__iconArrow-down-circle"><img src="/img/arrow-down-circle.svg" alt="">Instalar app </i>
+                    <i class="main__iconBell"><img src="/img/bell.svg" alt=""></i>
+                    <i class="main__iconUser"><img src="/img/User.jpg" alt=""></i>            
+                </div>
+            </div>
+
+
+            <div class="main__info-singer">
+                <i class="main__verified"><img src="/img/verified.svg" alt="">Artista verificado</i>
+                <h1 class="main__title">Coldplay</h1>
+                <p class="main__listeners">75.836.230 oyentes mensuales</p>
+            </div>
+        </article>
+
+        <article class="musics">
+            <div class="musics__header">
+                <i class="sings__iconpause"><img src="img/pause.svg" alt=""></i>
+                <button class="sings__btn btn2">Siguiendo</button>
+                <i class="sings__iconpoins"><img src="img/points1.svg" alt=""></i>
+            </div>
+        
+            <div class="musics__list">
+                <div class="sings__title">
+                    <h3 class="sings__h3">Populares</h3>
+                </div>
+        
+                <!-- Canciones -->
+                <div class="musics__list-item">
+                    <i class="musics__rank-icon"><img src="/img/song.svg" alt=""></i>
+                    <img class="musics__img" src="img/yellow.jpeg" alt="Yellow">
+                    <span class="musics__name">Yellow</span>
+                    <span class="musics__plays">2,036,716,267</span>
+                    <i class="musics__heart"><img src="/img/heart.svg" alt=""></i>
+                    <span class="musics__duration">4:26</span>
+                </div>
+        
+                <div class="musics__list-item">
+                    <span class="musics__rank">2</span>
+                    <img class="musics__img" src="img/VivaLaVida.jpg" alt="Viva La Vida">
+                    <span class="musics__name">Viva La Vida</span>
+                    <span class="musics__plays">1,857,812,466</span>
+                    <i class="musics__heart"><img src="/img/heart.svg" alt=""></i>
+                    <span class="musics__duration">4:02</span>
+                </div>
+
+                <div class="musics__list-item">
+                    <span class="musics__rank">3</span>
+                    <img class="musics__img" src="img/Something.jpeg" alt="Viva La Vida">
+                    <span class="musics__name">Something Just Like This</span>
+                    <span class="musics__plays">2.388.451.672</span>
+                    <i class="musics__heart visible"><img src="/img/heart.svg" alt=""></i>
+                    <span class="musics__duration">4:07</span>
+                </div>
+
+                <div class="musics__list-item">
+                    <span class="musics__rank">4</span>
+                    <img class="musics__img" src="img/VivaLaVida.jpg" alt="Viva La Vida">
+                    <span class="musics__name">Viva La Vida</span>
+                    <span class="musics__plays">1,857,812,466</span>
+                    <i class="musics__heart"><img src="/img/heart.svg" alt=""></i>
+                    <span class="musics__duration">4:02</span>
+                </div>
+
+                <div class="musics__list-item">
+                    <span class="musics__rank">5</span>
+                    <img class="musics__img" src="img/VivaLaVida.jpg" alt="Viva La Vida">
+                    <span class="musics__name">Viva La Vida</span>
+                    <span class="musics__plays">1,857,812,466</span>
+                    <i class="musics__heart"><img src="/img/heart.svg" alt=""></i>
+                    <span class="musics__duration">4:02</span>
+                </div>
+
+                <div class="musics__list-item">
+                    <span class="musics__rank">6</span>
+                    <img class="musics__img" src="img/VivaLaVida.jpg" alt="Viva La Vida">
+                    <span class="musics__name">Viva La Vida</span>
+                    <span class="musics__plays">1,857,812,466</span>
+                    <i class="musics__heart"><img src="/img/heart.svg" alt=""></i>
+                    <span class="musics__duration">4:02</span>
+                </div>
+
+                <div class="musics__list-item">
+                    <span class="musics__rank">7</span>
+                    <img class="musics__img" src="img/VivaLaVida.jpg" alt="Viva La Vida">
+                    <span class="musics__name">Viva La Vida</span>
+                    <span class="musics__plays">1,857,812,466</span>
+                    <i class="musics__heart"><img src="/img/heart.svg" alt=""></i>
+                    <span class="musics__duration">4:02</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <aside>
+        <article class="viewInfo">
+            <div class="viewInfo__header">
+                <h3 class="viewInfo__title">Coldplay</h3>
+                <i class="viewInfo__icon"><img src="/img/x.svg" alt=""></i>
+            </div>
+            <div class="viewInfo__img">
+                <img src="/img/yellow.jpeg" alt="">
+            </div>
+            <div class="viewInfo__footer">
+                <div class="viewInfo__text">
+                    <h2>Yellow</h2>
+                    <p>Coldplay</p>
+                </div>
+                <div class="viewInfo__icons">
+                    <i><img src="/img/heart_white.svg" alt=""></i>
+                    <i><img src="/img/points1.svg" alt=""></i>
+                </div>
+            </div>
+        </article>
+
+        <section class="singer__info">
+            <div class="info__header">
+                <p>informaión sobre el artista</p>
+            </div>
+            <div class="info__main">
+                <div class="info_title">
+                    <h3>Coldplay</h3>
+                </div>
+                
+                <div class="info__content">
+                    <div class="info__content-txt">
+                        <p>75.836.230 oyentes mensuales</p>                        
+                    </div>
+                    <div class="info__content-btn">
+                        <button class="btn2">Dejar de seguir</button>
+                    </div>
+                </div>
+
+                <div class="info__footer">
+                    <p>New album, Music Of The Spheres, out now.
+                        Coldplay formed their band in late 1997 after Guy
+                        Berryman, Jonny Buckland, Will Champion and...</p>
+                </div>
+            </div>
+        </section>       
+
+
+    </aside>
+
+    <footer>
+        <div class="footer__star">
+            <img class="footer__star-img" src="/img/yellow.jpeg" alt="music yellow">
+            <div class="footer__star-txt">
+                <h3>Yellow</h3>
+                <p>Coldplay</p>
+            </div>
+            <i class="footer__star-txt-icon"><img src="/img/heart_white.svg" alt=""></i>
+        </div>
+
+        <div class="footer__center">
+            <div class="footer__center-above">
+                <i class="footer__center-icon"><img src="/img/random.svg"></i>
+                <i class="footer__center-icon"><img src="/img/controller-left.svg"></i>
+                <i class="footer__center-icon"><img src="/img/pause-solid.svg"></i>
+                <i class="footer__center-icon"><img src="/img/controller-rigth.svg"></i>
+                <i class="footer__center-icon"><img src="img/repeat.svg"></i>
+            </div>
+            <div class="footer__center-down">
+                <span class="footer__center-span">1:29</span>
+                <i class="footer__center-barra"><img src="/img/Linea.svg"></i>
+                <span class="footer__center-span">4:26</span>
+            </div>
+        </div>
+
+        <div class="footer__end">
+            <i class="footer__end-icon"><img src="img/play-box-outline.svg"></i>
+            <i class="footer__end-icon"><img src="img/microphone.svg"></i>
+            <i class="footer__end-icon"><img src="img/queue-list.svg"></i>
+            <i class="footer__end-icon"><img src="img/devices.svg"></i>
+            <i class="footer__end-icon"><img src="img/volumen.svg"></i>
+            <i class="footer__end-iconvolum"><img src="img/linea_volumen.svg"></i>
+            <i class="footer__end-icon"><img src="img/mineature.svg"></i>
+            <i class="footer__end-icon"><img src="img/maximize-bold.svg"></i>            
+        </div>
+    </footer>  
+
+
+</body>
+</html>

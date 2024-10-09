@@ -1,0 +1,782 @@
+@import "./base";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    font-family: $Poppis;
+    font-weight: 400;
+    background-color: $black;
+    display: grid;
+    grid-template-columns: 0.8fr 2.1fr 0.8fr; 
+    grid-template-rows: auto auto 1fr;  
+    grid-template-areas:
+      "nav main aside"
+      "section main aside"
+      "footer footer footer";
+    height: 100vh; /* Altura total de la ventana */
+   
+
+    @include laptops{
+        height: 100vh;
+        width: auto;        
+        grid-template-columns: 0.2fr 1fr 0.4fr; 
+        grid-template-rows: auto auto auto;    
+    }
+
+    @include tablets{
+        height: 100vh;
+        width: auto;
+        grid-template-columns: 0.4fr 1fr 0.4fr; 
+        grid-template-rows: auto auto auto; 
+    }
+
+    @include phones{
+        height: 120vh;
+        width: auto;
+        grid-template-columns: 0.4fr 1fr 0.4fr; 
+        grid-template-rows: auto auto auto; 
+        grid-template-areas:
+        "main main main"
+        "main main main"
+        "footer footer footer";
+        aside {
+            display: none; // Ocultar el aside
+        }
+
+        nav{
+            display: none;
+
+        }
+        section{
+            display: none;
+
+        }
+    }
+
+
+
+}
+
+nav{
+    grid-area: nav;
+    font-weight: 500;    
+    color: $white;
+    background-color: $gray;
+    @include border;
+    padding: 20px;
+
+    .nav__icons{
+        @include felxColum;
+        @include container97;                  
+        gap: 1rem;
+               
+        .nav__icons-icon{
+            opacity: 50%;
+            @include itemCenter; 
+            cursor: pointer;
+            gap: 0.8rem;
+            font-size: $clamp;                
+            @include iconHover;
+                                 
+            img{
+                width: $clampImg;                      
+            }
+        }    
+
+    }   
+}
+
+
+
+section{    
+    grid-area: section; 
+    font-weight: 500;    
+    color: $white;
+    background-color: $gray;
+    @include border;  
+
+    .library{       
+
+        .library__header{
+            @include flex;
+            @include container; 
+            justify-content: space-between;     
+            padding-bottom: 15px;
+
+            .library__header-left{
+                font-size: $clamp;     
+
+                .library__header-icon1{
+                    opacity: 50%;
+                    cursor: pointer; 
+                    @include itemCenter;                     
+                    @include iconHover;
+                                    
+                    img{
+                        width: $clampImg;                        
+                        margin-right: 15px;   
+                        @include laptops{
+                            margin-right: 10px;
+                        }                 
+                    }
+                }
+            }
+            
+            .library__header-rigth{
+                @include flex;
+                gap: 0.5rem;
+
+                .library__header-icon2{
+                    opacity: 50%;
+                    cursor: pointer;
+                    @include itemCenter;                     
+                    &:hover{
+                        @include iconHover;
+                        background-color: $gray2;
+                        border-radius: 100%;
+                    }                 
+                    img{
+                        width: $clampImg;    
+                        padding: 5px;                                         
+                    }
+                }
+            }
+        }
+
+        .library__menu{
+            @include flex;
+            max-width: 94%;
+            margin: 0 auto; 
+            justify-content: start;
+            padding-bottom: 15px;
+
+            .library__menu-icon{
+                opacity: 50%;
+                cursor: pointer; 
+                @include itemCenter;                     
+                @include iconHover;
+                                
+                img{
+                    width: $clampImg;    
+                    padding: 9px; 
+                    background-color: $gray2;
+                    border-radius: 100%;  
+                    margin-right: 10px;  
+                }
+            }
+
+        }
+    }
+
+    .library__search{
+        @include flex;
+        @include container93; 
+        font-size: $clamp;  
+        justify-content: space-between;
+        padding-bottom: 15px;
+
+        .library__search-icon1{
+            opacity: 50%;
+            cursor: pointer; 
+            @include itemCenter;                               
+            &:hover{
+                @include iconHover;                
+                background-color: $gray2;
+                border-radius: 100%;
+            }                
+            img{
+                width: $clampImg;     
+                padding: 5px;               
+            }
+
+        }
+
+        .library__search-icon2{
+            opacity: 50%;
+            cursor: pointer; 
+            @include itemCenter;                     
+            @include iconHover;
+                           
+            img{
+                width: $clampImg;    
+                margin-left: 10px;                    
+            }
+
+        }
+
+    }
+    
+}
+
+
+
+
+.singers {
+    @include felxColum;
+    @include container;
+    @include container97;
+    gap: 15px;
+
+    .singers__singer {
+        @include flex;
+        @include itemCenter;
+        justify-content: start;
+        cursor: pointer;
+        padding: 5px;
+        position: relative; /*contenedor principal tenga position relative */
+        
+        &:hover {
+            background-color: $gray2;
+            border-radius: 10px;
+
+            .play-icon {
+                opacity: 1; /* Mostrar el ícono cuando pasas el mouse */
+            }
+        }
+
+        .singers__singer-img {
+            width: 40px;
+            border-radius: 100%;
+            position: relative; /* Esto debe aplicarse aquí si quieres el ícono sobre la imagen */
+        }
+
+        .singers__singer-span {
+            font-family: $Poppis;
+            font-size: $clamp;
+            margin-left: 10px;
+        }
+
+        .singers__singer-icon {
+            @include itemCenter;
+            
+            img {
+                width: $clampImg;
+                margin-left: 160px;
+                @include laptops{
+                    margin-left: 50px;
+                }
+                @include tablets{
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 22%;
+            left: 4%;
+            transform: translate(-5%, -5%);
+            opacity: 0; /* Oculto inicialmente */
+            transition: opacity 0.3s ease;
+        }
+    }
+}
+
+
+
+main{
+    @include scrollbar-estilo(8px, $gray, $gray2, #555);
+    overflow-y: auto; 
+    grid-area: main;
+    font-weight: 500;    
+    color: $white;
+    background-color: $gray;
+    margin: 10px;
+    border-radius: 10px 10px 0px 0px;
+
+    .main__header{ /* bg imagen */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.2),/* oscurecer la imagem*/
+            rgba(0, 0, 0, 0.2)),
+            url(/img/Coldplay-bg.jpeg);  
+          @include bg-img;
+          @include felxColum;
+          justify-content: space-between;
+          align-items: start;
+          overflow: hidden; 
+
+
+        .main__header-icons{
+            width: 95%;
+            @include flex;
+            justify-content: space-between;
+            margin: 10px;
+
+            .main__header-icons-left {
+                @include flex;
+                justify-content: start;
+                align-items: center;
+                cursor: pointer; 
+                gap: 0.8rem;
+
+                .main__iconChevron{
+                    opacity: 90%;
+                    @include iconHover;
+                    
+                    img {
+                        width: $clampImg;    
+                        padding: 5px;
+                        background-color: $gray2;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        
+            .main__header-icon-right {
+                display: flex;                
+                align-items: center;
+                gap: 0.6rem;
+               
+                .main__iconArrow-down-circle{
+                    padding: 4px;
+                    margin: 5px;
+                    background-color: $gray3;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    @include itemCenter;
+                    font-size: $clamptextSmall;
+                    img{
+                        margin-right: 5px;
+                    }
+                }
+
+                .main__iconBell{
+                    @include itemCenter;  
+                    cursor: pointer;                  
+                    background-color: $gray3;
+                    border-radius: 100%;   
+                    padding: 4px    
+
+                }
+
+                .main__iconUser{
+                    @include itemCenter;
+                    cursor: pointer;
+                    padding: 5px;                    
+                    background-color: $gray3;
+                    border-radius: 100%;   
+                    img {
+                        width: 25px;    
+                        height: auto; 
+                        border-radius: 100%;                    
+                    }
+                }
+            }  
+        }
+
+        .main__info-singer{
+            @include flex;
+            flex-direction: column;
+            margin: 10px;
+
+            .main__verified{
+                @include itemCenter;
+                gap: 0.6rem;
+            }
+
+            .main__title{
+                font-size: $clamptitle;
+            }
+
+            .main__listeners{
+                font-size: $clamp;
+            }    
+        }  
+    }
+
+
+    .musics {
+        .musics__header {
+            @include flex;
+            @include itemCenter;
+            @include container93;
+            margin-top: 0.6rem;
+            gap: 0.7rem;
+    
+            .sings__iconpause {
+                opacity: 80%;
+                cursor: pointer;
+                @include itemCenter;
+                @include iconHover;
+                img { width: 50px; }
+            }
+    
+            .sings__btn {
+                opacity: 80%;
+                @include iconHover; 
+            }
+    
+            .sings__iconpoins {
+                @include itemCenter;
+                cursor: pointer;
+                opacity: 60%;
+                @include iconHover; 
+                img { width: $clampImg; }
+            }
+        }
+    
+        .musics__list {
+            @include flex;
+            @include container93;
+            flex-direction: column;
+            gap: 15px; /* Espacio entre las canciones */
+    
+            .sings__title {
+                margin-top: 0.6rem;
+            }
+    
+            .musics__list-item {
+                @include flex;
+                align-items: center;
+                gap: 10px;
+                padding: 5px 5px;
+                cursor: pointer;
+                
+    
+                &:hover {
+                    background-color: $gray2;
+                    border-radius: 10px;
+                }
+    
+                .musics__rank-icon {
+                    width: 30px;
+                    text-align: center;
+                    font-size: $clamptext;
+                    margin-left: -10px;
+                }
+    
+                .musics__img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 4px;
+                }
+    
+                .musics__name {
+                    flex: 1;
+                    margin-left: 10px;
+                    font-size: $clamp;
+                }
+    
+                .musics__plays {
+                    font-size: $clamptextSmall;
+                    opacity: 0.8;
+                    margin-right: 20px;
+                }
+
+                .musics__heart{
+                    @include itemCenter;
+                    opacity: 0;
+                    img{
+                        width: $clampImg;  
+                    }
+                    &.visible{
+                        opacity: 80%;
+                    }
+                }
+    
+                .musics__duration {
+                    width: 50px;
+                    text-align: right;
+                    font-size: $clamptextSmall;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}    
+
+aside{
+    @include scrollbar-estilo(8px, $gray, $gray2, #555);
+    grid-area: aside;
+    font-weight: 500;    
+    color: $white;
+    background-color: $gray;
+    margin: 8px;    
+    border-radius: 10px 10px 0px 0px;    
+    overflow-y: auto; 
+
+    .viewInfo{
+        @include flex;
+        @include container;
+        flex-direction: column;        
+        
+        .viewInfo__header{
+            @include flex;
+            justify-content: space-between;
+            padding: 15px 5px;
+            
+            .viewInfo__title{
+                @include txtHover; 
+                font-size: $clamp;
+                cursor: pointer;                                          
+            }
+
+            .viewInfo__icon{
+                opacity: 60%;
+                @include iconHover;
+                
+                img{
+                    cursor: pointer;
+                    width: $clampImg;
+                }
+            }
+        }
+        .viewInfo__img{
+            @include flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            img{
+                cursor: pointer;
+                width: $BigImg;
+                border-radius: 10px
+
+            }
+        }
+
+        .viewInfo__footer{
+            @include flex;
+            justify-content: space-between;  
+            padding: 5px 10px;          
+           
+            .viewInfo__text{
+               h2{
+                font-size: $clampImg;
+                @include txtHover;
+                cursor: pointer;
+               }
+               p{
+                font-size: $clamptextSmall;
+                @include txtHover;
+                cursor: pointer;
+               }
+            }
+            .viewInfo__icons{
+                @include flex;
+                align-items: center;
+                gap: 0 10px;
+                img{
+                    cursor: pointer;
+                    width: $clampImg;
+                    opacity: 60%;                   
+                    @include iconHover;
+                    
+                }
+            }
+        }
+    }
+
+    .singer__info{ 
+        @include container;             
+        background-color: $gray2;
+        cursor: pointer;
+        border-radius: 10px;
+        padding: 0px;
+
+        .info__header{            
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.2),/* oscurecer la imagem*/
+                rgba(0, 0, 0, 0.2)),
+                url(/img/singer_bg.jpg);  
+              @include bg-imgchi;
+              @include flex;
+              justify-content: space-between;
+              align-items: start;
+              overflow: hidden; 
+            
+            p{ 
+                margin: 1rem;
+                font-weight: 600;
+                font-size: $clamptextSmall;
+            }  
+        }
+
+        .info__main{
+            
+            .info_title{
+                margin: 0.4rem 1rem;
+                h3{
+                    @include txtHover;
+                    font-size: $clamptext;
+                }
+            }
+
+            .info__content{
+                margin: 0.1rem 0.4rem 0.4rem 1rem  ;
+                @include flex;
+                @include itemCenter;
+           
+                
+                .info__content-txt{                    
+                    p{
+                        opacity: 80%;
+                        font-size: $clamptextSmall;
+                    }                        
+                }
+                .info__content-btn{
+                    button{
+                        opacity: 80%;
+                        @include iconHover;
+                    }
+                }
+            }
+
+            .info__footer{
+                margin: 0.8rem 1rem;
+                padding-bottom: 10px;
+                opacity: 80%;
+                p{
+                    font-size: $clamptextSmall;
+                }
+            }
+        }
+    }
+
+    
+
+    
+}
+
+
+footer{
+    @include flex;
+    justify-content:  space-between;
+    grid-area: footer;
+    font-weight: 500;    
+    color: $white;
+    background-color: $black;
+    margin: 0rem;
+
+
+    .footer__star{ 
+        @include flex;
+        @include itemCenter;        
+        padding: 5px;        
+        gap: 0.7rem;
+
+        .footer__star-img{
+            cursor: pointer;
+            width: $clamptitle;
+            border-radius: 4px;
+        }
+        .footer__star-txt{
+            cursor: pointer;
+
+            h3{ 
+                @include txtHover;
+                @include phones{
+                    font-size: 0.6rem;
+                }
+                font-size: $clamptext;}
+            p{
+                @include phones{
+                    font-size: 0.4rem;
+                }
+                @include txtHover;
+                font-size: $clamptextSmall;}
+        }
+
+        .footer__star-txt-icon{
+            cursor: pointer;            
+            img{
+                opacity: 80%;
+                width: $clampImg;                
+                @include iconHover; 
+                @include phones{
+                    width: 0.7rem;
+                }
+            
+            }
+        }
+
+    }
+
+    .footer__center{
+        @include flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px; 
+        
+        .footer__center-above{
+            @include flex;
+            @include phones{
+                gap: 1px;
+            }
+            justify-content: center;
+            gap: 1.5rem;
+            .footer__center-icon{                
+                img{
+                    @include iconHover;
+                    cursor: pointer;
+                    width: $icon;
+                    opacity: 80%;
+                    @include phones{
+                        img{
+                            width: 5px;
+                        }
+                    }    
+                }
+            }
+        }
+
+        .footer__center-down{
+            @include flex;
+            @include itemCenter;
+
+            gap: 5px;
+            .footer__center-span{
+                font-size: $clamptextSmall;
+            }
+            .footer__center-barra{
+                img{ width: 300px;}
+
+                @include laptops{
+                    img{width: 200px;}
+                }
+
+                @include phones{
+                    img{ width: 110px; }
+                }    
+            }
+        }
+    }
+
+    .footer__end{
+        @include flex;  
+        @include itemCenter; 
+        @include phones{
+            gap: 1px;
+        }
+        padding: 5px;        
+        gap: 0.6rem;
+        .footer__end-icon{               
+            img{
+                @include iconHover;
+                cursor: pointer;
+                width: $clampImg;
+                opacity: 80%;
+            }
+        }
+
+        .footer__end-iconvolum{
+            @include itemCenter;
+            padding-bottom: 0.4rem; 
+            @include phones{
+                img{
+                    max-width: 20px;
+                }
+            }             
+            img{
+                @include iconHover;
+                cursor: pointer;
+                width: 100px;
+                opacity: 80%;
+ 
+            }
+        }
+    }
+
+}
